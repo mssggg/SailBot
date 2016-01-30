@@ -3,7 +3,7 @@
 #include"GPSCoordinate.h"
 using namespace std;
 
-SphericalDisanceCalculator::SphericalDistanceCalculator(double r) {};
+SphericalDisanceCalculator::SphericalDistanceCalculator(double r) {}
  double SphericalDisanceCalculator::calculateDistance( GPSCoordinate *coord1,  GPSCoordinate *coord2) {
 	 double lat1r, lon1r, lat2r, lon2r, u, v;
 	 double lat1 = coord1->lat;
