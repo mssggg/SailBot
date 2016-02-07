@@ -1,17 +1,32 @@
-#ifndef SPHERICAL_DISTANCE_CALCULATOR_H
-#define SPHERICAL_DISTANCE_CALCULATOR_H
-include"Gps_Coordinate"
+/*
+ * SphericalDistanceCalculator.h
 
-using namespace std;
+ */
+
+#ifndef SPHERICALDISTANCECALCULATOR_H_
+#define SPHERICALDISTANCECALCULATOR_H_
 
 
-class SphericalDistanceCalculator
+extern const double pi;
+
+class GPSCoordinate
 {
-   public:
-     
-      SphericalDistanceCalculator:: SphericalDistanceCalculator(double r); // constructor
-	  double( distanceDistanceGPSCoordinate& , GPSCoordinate& );
-     
-   protected:
-      double radius;
+public:
+
+	double lat;
+	double lon;
 };
+
+class SphericalDistanceCalculator {
+public:
+	SphericalDistanceCalculator(double radius);
+	virtual ~SphericalDistanceCalculator();
+	double calculateDistance(GPSCoordinate *coord1, GPSCoordinate *coord2);
+private:
+	double deg2rad(double deg) {
+		return (deg * pi / 180);
+	}
+	double radius_;
+};
+
+#endif /* SPHERICALDISTANCECALCULATOR_H_ */
